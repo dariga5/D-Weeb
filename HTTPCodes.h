@@ -8,7 +8,7 @@ enum HTTPcodes{
     //3** - Redirection
 
     //4** - ClientError
-    BADREQUEST = 400,
+    BAD_REQUEST = 400,
     FORBIDDEN = 403,
     NOT_FOUND = 404
     //5** 

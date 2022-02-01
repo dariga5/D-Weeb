@@ -1,40 +1,35 @@
 #include "HTTPMethods.h"
 #include "HTTPCodes.h"
+#include "HTTPRequest.h"
 
 class Server
 {
 private:
-    char req;
+    static char *StaticContent[];
+    char* req;
 
-
-
-    void GetRequest(const char *req, const HTTPMethods method){
+    void GetRequest(HTTPMethods req, void *context){
         
-        switch (method)
+        switch (req)
         {
-        case 1:
-            
+        case 1:             
             
             break;
         case 2:
 
-             
              break;
         }
     }
 public:
-    int Init(){
-
-
-        return 1;
-    }
     void listen(int *PORT){
 
     }
-    void GET(){
-        GetRequest((char*)req, (HTTPMethods)1);
+    void get(){
+        HTTPRequest_t GET_t;
+        GetRequest(GET_t.method, (void*)GET_t.path);
     }
-    void POST(){
-        GetRequest((char*)req, (HTTPMethods)2);
+    void post(){
+        HTTPRequest_t POST_t;
+        GetRequest(POST_t.method, (void*)POST_t.path);
     }
 };
