@@ -1,4 +1,4 @@
-enum  HTTPMethods{
+enum HTTPMethods{
     GET = 1,
     POST
 };

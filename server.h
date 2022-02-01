@@ -6,9 +6,7 @@ class Server
 {
 private:
     static char *StaticContent[];
-    char* req;
-
-    void GetRequest(HTTPMethods req, void *context){
+    void CreateRequest(HTTPMethods req, char *context){
         
         switch (req)
         {
@@ -26,10 +24,10 @@ public:
     }
     void get(){
         HTTPRequest_t GET_t;
-        GetRequest(GET_t.method, (void*)GET_t.path);
+        CreateRequest(GET, (char*)GET_t.path);
     }
     void post(){
         HTTPRequest_t POST_t;
-        GetRequest(POST_t.method, (void*)POST_t.path);
+        CreateRequest(POST, (char*)POST_t.path);
     }
 };
