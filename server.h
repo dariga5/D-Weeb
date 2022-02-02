@@ -6,28 +6,36 @@ class Server
 {
 private:
     static char *StaticContent[];
-    void CreateRequest(HTTPMethods req, char *context){
+    HTTPcodes CreateRequest(HTTPMethods req, char *context){
         
         switch (req)
         {
-        case 1:             
-            
+        case 1:    
+
+            return 200
             break;
         case 2:
+            
 
+             return 200
              break;
         }
+        return 404
     }
 public:
     void listen(int *PORT){
 
     }
-    void get(){
+    void get(char url[2048]){
         HTTPRequest_t GET_t;
-        CreateRequest(GET, (char*)GET_t.path);
+        GET_t.method = GET;
+        GET_t.path = url;
+        GET_t.state = CreateRequest(GET_t.method, (char*)GET_t.path);
     }
-    void post(){
+    void post(char url[2048]){
         HTTPRequest_t POST_t;
-        CreateRequest(POST, (char*)POST_t.path);
+        POST_t.method = POST;
+        POST_t.path = url;
+        POST_t.state = CreateRequest(POST_t.method, (char*)POST_t.path);
     }
 };

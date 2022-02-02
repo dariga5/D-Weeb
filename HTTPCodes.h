@@ -5,8 +5,6 @@ enum HTTPcodes{
     OK = 200,
     CREATED = 201,
     ACCEPTED = 202,
-    //3** - Redirection
-
     //4** - ClientError
     BAD_REQUEST = 400,
     FORBIDDEN = 403,
