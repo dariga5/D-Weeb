@@ -6,7 +6,7 @@ Server server;
 
 int main(){
 
-    server.listen((int*)PORT);
+    server.listen(PORT);
 
     while (true){
         
