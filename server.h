@@ -2,21 +2,15 @@
 #include "HTTPCodes.h"
 #include "HTTPRequest.h"
 
+
 class Server
 {
 private:
     static char *StaticContent;
-    
 public:
     void Init(){
-        StaticContent = (char*)
-    "<!DOCTYPE html>
-     <head>
-        <meta charset=" + "UTF-8" + ">
-     </head>
-    <body>
-    
-    </body>"
+        StaticContent = (char*)"";
+
     }
     void listen(int PORT){
 
@@ -37,8 +31,8 @@ public:
         
         switch (req)
         {
-        case 1:    
-
+        case 1:   
+        
             return OK;
             break;
         case 2:
@@ -51,6 +45,30 @@ public:
     }
     void *ReturnResponse(HTTPcodes code){
         
+        switch (code)
+        {
+            case CONTINUE:
+
+              break;
+            case OK:
+
+                break;
+            case CREATED:
+
+                break;
+            case ACCEPTED:
+
+                break;
+            case BAD_REQUEST:
         
+                break;
+            case FORBIDDEN:
+
+                break;
+            case NOT_FOUND:
+
+                break;
+        }
+        return StaticContent;
     }
 };
